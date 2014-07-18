@@ -7,7 +7,7 @@ spin <- function(...){
     , class = c('spin', 'htmlwidget')
     , jsfile = "http://timelyportfolio.github.io/htmlwidgets_spin/inst/spin.js"
     , config = "http://timelyportfolio.github.io/htmlwidgets_spin/inst/spin.yaml"
-    , package <- NULL
+    , package = NA
   )
   return(s)
 }
