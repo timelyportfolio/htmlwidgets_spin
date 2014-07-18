@@ -2,7 +2,9 @@
 spin <- function(...){
   params <-  list(...)
   params = Filter(Negate(is.null), params)
-  structure(params, class = c('spin', 'htmlwidget'))
+  s <- structure(params, class = c('spin', 'htmlwidget'))
+  attr(s,"jsfile") <- "http://timelyportfolio.github.io/htmlwidgets_spin/inst/spin.js"
+  return(s)
 }
 
 #' @export
