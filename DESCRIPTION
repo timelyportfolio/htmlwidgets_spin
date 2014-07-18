@@ -1,4 +1,4 @@
-Package: htmlwidgets_spin
+Package: spin
 Type: Package
 Title: spin.js HTML Widget for R
 Version: 1.0
