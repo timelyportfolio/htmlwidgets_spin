@@ -18,7 +18,6 @@ source('http://timelyportfolio.github.io/htmlwidgets_spin/R/spin.R')
 Let us first create a simple spin.
 
 ```r
-library(spin)
 s1 = spin()
 s1
 ```
