@@ -6,8 +6,8 @@ source('http://timelyportfolio.github.io/htmlwidgets_spin/R/spin.R')
 
 tl <- renderTags(
   tagList(
-    spin()
-    ,spin()
+    spin(config=list(position="relative"))
+    ,spin(config=list(position="relative"))
     #does not work with local assets currently
     #,knob('Test', 20, 0, 100, angleArc = 250, angleOffset = -125,  fgColor = "#66CC66")
   )
@@ -33,3 +33,5 @@ saveTags <- function ( rendered ){
 }
 
 saveTags(tl)
+
+#cat(saveTags(tl),file="inst/example.html")
