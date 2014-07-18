@@ -1,6 +1,6 @@
 ## spin
 
-This is an experimental R package that provides a [spin](http://fgnass.github.io/spin.js/) html widget for R.
+This is an experimental R package that provides a [spin](http://fgnass.github.io/spin.js/) html widget for R.  For a quick tutorial, see Web Apprentice [spin.js Activity Indicator](spin.js Activity Indicator).
 
 ### Installation
 
