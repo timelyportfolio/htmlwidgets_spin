@@ -10,7 +10,7 @@ You can install it from `github`.
 library(devtools)
 install_github('rstudio/htmltools')
 install_github('ramnathv/htmlwidgets')
-install_github('timelyportfolio/htmlwidgets_spin')
+source('http://timelyportfolio.github.io/htmlwidgets_spin/R/spin.R')
 ```
 
 ### Usage
