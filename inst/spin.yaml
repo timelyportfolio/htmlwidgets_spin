@@ -2,4 +2,4 @@ dependencies:
   - name: spin
     version: 2.0.1
     src: "lib/spin"
-    script: spin.js
+    script: "spin.js"
