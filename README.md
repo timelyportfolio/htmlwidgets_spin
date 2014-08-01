@@ -8,9 +8,9 @@ You can install it from `github`.
 
 ```r
 library(devtools)
-install_github('rstudio/htmltools')
-install_github('ramnathv/htmlwidgets')
-source('http://timelyportfolio.github.io/htmlwidgets_spin/R/spin.R')
+#install_github('rstudio/htmltools')
+#install_github('ramnathv/htmlwidgets')
+#install_github('timelyportfolio/htmlwidgets_spin')
 ```
 
 ### Usage
@@ -18,7 +18,7 @@ source('http://timelyportfolio.github.io/htmlwidgets_spin/R/spin.R')
 Let us first create a simple spin.
 
 ```r
-s1 = spin()
+s1 <- spin()
 s1
 ```
 
