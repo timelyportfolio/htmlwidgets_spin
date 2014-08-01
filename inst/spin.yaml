@@ -1,5 +1,5 @@
 dependencies:
   - name: spin
     version: 2.0.1
-    src: "http://fgnass.github.io/spin.js/"
-    script: spin.min.js
+    src: "lib/spin"
+    script: "spin.js"
