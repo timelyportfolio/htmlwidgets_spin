@@ -4,12 +4,10 @@
 spin <- function(...){
   params <-  list(...)
   params = Filter(Negate(is.null), params)
-  s <- structure(
-    params
-    , class = c('spin', 'htmlwidget')
-  )
-  return(s)
+  htmlwidgets::createWidget( 'spin', params )
 }
 
 #' @export
-spinOutput <- htmlwidgets::widgetOutput('spin')
+spinOutput <- htmlwidgets::makeShinyOutput('spin')
+renderSpin <- htmlwidgets::makeShinyRender('spin')
+
