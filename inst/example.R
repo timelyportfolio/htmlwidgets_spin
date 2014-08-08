@@ -35,3 +35,31 @@ saveTags <- function ( rendered ){
 saveTags(tl)
 
 #cat(saveTags(tl),file="inst/example.html")
+
+
+
+
+
+
+library(shiny)
+library(htmlwidgets)
+library(spin)
+
+ui = bootstrapPage(
+  tags$style('body{margin-left:40px; margin-top:40px;}'),
+  sliderInput('lines', 'Number of Lines', 0, 20, 15),
+  sliderInput('length', 'Line Length', 0, 20, 10),
+  sliderInput('width', 'Line Width', 0, 20, 5),
+  sliderInput('radius', 'Radius of Inner Circle', 0, 50, 20),
+  spinOutput('spinner', width = 100, height = 100)
+)
+server = function(input, output, session){
+  output$spinner <- renderSpin(spin(
+    lines = input$lines
+    ,length = input$length
+    ,width = input$width
+    ,radius = input$radius
+  ))
+}
+
+runApp(list(ui = ui, server = server))

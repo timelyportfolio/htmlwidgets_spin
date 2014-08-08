@@ -1,6 +1,4 @@
 #' @export
-#' @import htmltools
-#' @import htmlwidgets
 spin <- function(...){
   params <-  list(...)
   params = Filter(Negate(is.null), params)
@@ -9,5 +7,6 @@ spin <- function(...){
 
 #' @export
 spinOutput <- htmlwidgets::makeShinyOutput('spin')
-renderSpin <- htmlwidgets::makeShinyRender('spin')
 
+#' @export
+renderSpin <- htmlwidgets::makeShinyRender('spin')
