@@ -1,14 +1,15 @@
 HTMLWidgets.widget({
   name: "spin",
   type: "output",
-  renderValue: function(el, data) {
-    //thanks http://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
-    var removeChilds = function (node) {
-      var last;
-      while (last = node.lastChild) node.removeChild(last);
-    };
-    removeChilds(el);
-    return new Spinner(data).spin(el);
-    //el.appendChild(spinner.el)
+  renderValue: function(el, data ) {
+    //if no config then will be an array []
+    //we need {} to use defaults though
+    data = data.constructor == Array ? {} : data;
+    
+    var spin = new Spinner(data);
+    spin.el = el.getElementsByClassName(spin.opts.className)[0];
+    spin.stop();
+    
+    spin.spin(el);
   }
 });
