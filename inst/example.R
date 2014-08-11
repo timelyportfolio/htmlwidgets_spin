@@ -63,3 +63,28 @@ server = function(input, output, session){
 }
 
 runApp(list(ui = ui, server = server))
+
+
+#now do an example with a knob talking to a spin
+library(htmltools)
+library(htmlwidgets)
+library(spin)
+library(knob)
+
+h <- tags$html(
+  tags$div(id = "spin1", style = "width:25%;height:150px;display:inline-block"
+    ,tags$h3("Spin To Adjust")
+    ,spin(position = "relative", width = "100px", height = "100px")
+  )
+  ,tags$div(id = "spin2", style = "width:25%;height:150px;display:inline-block"
+    ,tags$h3("Spin Not To Adjust")
+    ,spin(position = "relative", width = "100px", height = "100px")
+  )
+  ,tags$div(
+    tags$h3("Adjust # of Lines")
+    ,knob('Knob Talks to Spin', 14, 0, 20, angleArc = 250, angleOffset = -125, 
+          fgColor = "#66CC66"
+    )
+  )
+)
+html_print(h)

@@ -5,11 +5,14 @@ HTMLWidgets.widget({
     //if no config then will be an array []
     //we need {} to use defaults though
     data = data.constructor == Array ? {} : data;
+      
+    if (typeof el.spin == "undefined") {
+      el.spin = new Spinner(data);
+    } else {
+      el.spin.stop();
+      el.spin = new Spinner(data);
+    }
     
-    var spin = new Spinner(data);
-    spin.el = el.getElementsByClassName(spin.opts.className)[0];
-    spin.stop();
-    
-    spin.spin(el);
+    el.spin.spin(el)
   }
 });
