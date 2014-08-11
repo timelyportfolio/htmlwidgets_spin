@@ -86,24 +86,25 @@ h <- tags$html(
           fgColor = "#66CC66",
     )
   )
+  ,tags$div(
+    tags$h3("Do Nothing")
+    ,knob('Knob Talks to Spin', 14, 0, 20, angleArc = 250, angleOffset = -125, 
+          fgColor = "#66CC66",
+    )
+  )
   ,tags$script(
 "
-//override knob render value
-//since no way currently to do #! js code !# or use JSONfn
-HTMLWidgets.widgets[1].renderValue = function(el,data){
-  /*var knobData = $('script[data-for = ' + $('.knob')[0].id + ']')
-  var dataObj = JSON.parse(knobData.text());
-  */
-  data.change = function (v) {
-    $('.spin')[0].spin.opts.lines = v;
-     HTMLWidgets.widgets[0].renderValue(
-       $('.spin')[0], $('.spin')[0].spin.opts
-     )
-  }
-  //knobData.text(JSON.stringify(data));
-  $('.knob').trigger('configure',data);
-  $('.knob').val(data.value).trigger('change');
-};
+document.addEventListener('DOMContentLoaded',function (){
+  $('.knob:first').trigger('configure', {
+      'change': function (v) {
+         $('.spin')[0].spin.opts.lines = v;
+         HTMLWidgets.widgets[0].renderValue(
+           $('.spin')[0], $('.spin')[0].spin.opts
+         )
+      }
+  });
+}
+)
 
 "
   )
