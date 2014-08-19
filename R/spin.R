@@ -7,7 +7,12 @@ spin <- function(..., width = NULL, height = NULL){
 
 
 #' @export
-spinOutput <- htmlwidgets::makeShinyOutput('spin')
+spinOutput <- function( outputId, width = "100%", height = "200px" ){
+  shinyWidgetOutput( outputId, 'spin', height, width, package = "spin" )
+}
 
 #' @export
-renderSpin <- htmlwidgets::makeShinyRender('spin')
+renderSpin <- function(expr, env = parent.frame(), quoted = FALSE) {
+  if (!quoted) { expr <- substitute(expr) } # force quoted
+  shinyRenderWidget(expr, spinOutput, env, quoted = TRUE)
+}
